@@ -1,5 +1,5 @@
 import React from 'react'
-import { AppBar, Container, Toolbar, Typography, Select, MenuItem,  } from '@material-ui/core'
+import { AppBar, Container, Toolbar, Typography, Select, MenuItem, CssBaseline,  } from '@material-ui/core'
 import {createTheme, ThemeProvider} from '@material-ui/core/styles'
 import { makeStyles } from '@material-ui/core';
 import { useNavigate } from "react-router-dom"; 
@@ -28,17 +28,15 @@ const Header = () => {
         navigate('/');
     }
 
-    const darkTheme = createTheme({
-        palette: {
-            primary: {
-                main: "#fff",
-            },
-            type: "dark",
-        }
-    })
+    const theme = createTheme({
+      palette: {
+        type: 'dark',
+      },
+    });
   return (
-    <ThemeProvider theme={darkTheme}>
-    <AppBar color='black' position='static'>
+    <ThemeProvider theme={theme}>
+    <CssBaseline />
+    <AppBar color='transparent' position='static'>
       <Container>
         <Toolbar>
             <Typography
